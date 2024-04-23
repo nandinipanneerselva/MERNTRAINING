@@ -26,16 +26,16 @@ app.use(bodyParser.json())
 // importing variable from another file
 const {Expense}=require("./schema")
 const {User}=require("./schema.js")
-
+const cors =require('cors')
 //importing mongoose
-
+app.use(cors())
 const mongoose=require('mongoose')
 
 async function connect()
 {
     try{
     await mongoose.connect('mongodb+srv://717821f236:4uSoHhWqQeMzm6hj@cluster0.1f6iyvm.mongodb.net/ExpenseTracker?retryWrites=true&w=majority&appName=Cluster0')
-    app.listen(8000,function()
+    app.listen(8005,function()
 {
     console.log("Listening ......")
 })
